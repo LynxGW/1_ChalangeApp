@@ -1,24 +1,20 @@
-﻿// See https://aka.ms/new-console-template for more information
-// Console.WriteLine("Hello, World!");
-string myName = "Ewa";
-bool isMen = false;
-int myAge = 33;
+﻿int number = 990886761;
+char[] numberAsChar = number.ToString().ToCharArray();
+char[] counter = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+int[] result = new int[10];
 
-if (isMen == false)
+foreach (char c in numberAsChar)
 {
-    if (myName == "Ewa" && myAge == 33)
+    for (int i = 0; i < counter.Length; i++)
     {
-        Console.WriteLine("Ewa, lat 33");
+        if (counter[i] == c)
+        {
+            result[i] += 1;
+        }
     }
-    else if (myAge < 30)
-    {
-        Console.WriteLine("Kobieta poniżej 30 lat");
-    }
-    else Console.WriteLine("Kobieta powyżej 30 lat");
+}
+for (int i = 0; i < counter.Length; i++)
+{
+    Console.WriteLine(counter[i] + " => " + result[i]);
+}
 
-}
-else if (myAge < 18)
-{
-    Console.WriteLine("Niepełnoletni mężczyzna");
-}
-else Console.WriteLine("Pełnoletni mężczyzna");
